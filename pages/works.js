@@ -28,8 +28,9 @@ const Works = () => (
             thumbnail={thumbParade}
             href="https://parade.events"
           >
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+            Parade is the platform for event discovery on campus. The app allows
+            student organizations (orgs) to advertise their events, and for
+            students to discover them.
           </WorkGridItem>
         </Section>
         <Section>
@@ -39,8 +40,9 @@ const Works = () => (
             thumbnail={thumbTroav}
             href="https://store.troav.com"
           >
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+            A 5-minute meal-delivery app. The driver was pre-stocked with food
+            so it could go straight to the customer upon order saving time and
+            money.
           </WorkGridItem>
         </Section>
 
@@ -51,8 +53,7 @@ const Works = () => (
             thumbnail={thumbPosseMix}
             href="https://possemix.com"
           >
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+            A collaborative app for mixing music.
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
@@ -62,8 +63,7 @@ const Works = () => (
             thumbnail={thumbENES}
             href="https://eastnashvilleeditingsuite.com"
           >
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+            We rent a powerful Mac Pro Editing Suite to local creatives.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
