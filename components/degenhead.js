@@ -1,7 +1,6 @@
-import { color, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
-import { Vector3 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { HeadSpinner, HeadContainer } from './degenheadloader'
@@ -17,14 +16,6 @@ const DegenHead = () => {
   const [_camera, setCamera] = useState()
   const [target] = useState(new THREE.Vector3(0, 0, 0))
   const { colorMode } = useColorMode()
-  // const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
-  // const [initialCameraPosition] = useState(
-  //   new THREE.Vector3(
-  //     20 * Math.sin(0.2 * Math.PI),
-  //     10,
-  //     20 * Math.cos(0.2 * Math.PI)
-  //   )
-  // )
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -79,22 +70,12 @@ const DegenHead = () => {
       camera.lookAt(target)
       setCamera(camera)
 
-      // const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
-      // scene.add(ambientLight)
-
-      // const areaLight = new THREE.RectAreaLight(0xcccccc, 10, 10, 10)
-      // areaLight.position.set(5, 5, 1)
-      // areaLight.target = target
-      // areaLight.lookAt(target)
       const pointLight = new THREE.PointLight(0xcccccc, 2)
       pointLight.position.set(80, 8, 4)
       const pointLight2 = new THREE.PointLight(0xcccccc, 2)
       pointLight2.position.set(-80, 30, 40)
       scene.add(pointLight)
       scene.add(pointLight2)
-      // scene.add(directionalLight)
-      // directionalLight.target = target
-      // scene.add(directionalLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
@@ -153,26 +134,11 @@ const DegenHead = () => {
     scene.children[2]?.children[0]?.material?.color.setHex(hex)
   }
 
-
   const setFace = () => {
-      // // scene.children[2]?.children[0]?.material?.roughness = 0
-      if (colorMode == 'light') {
-      // // scene.children[2]?.children[0]?.material?.metalness = 1
-
-      // // setFaceColor(0xa87a25)
-      // console.log(scene.children[2]?.children[0]?.material)
+    if (colorMode == 'light') {
       setFaceColor(0xff4444)
-      // scene.children[2]?.children[0]?.material?.roughness = 1
-
     } else {
-      // setFaceColor(0x332526)
       setFaceColor(0x000000)
-
-      // scene.children[2]?.children[0]?.material?.roughness = 0.627 
-      // scene.children[2]?.children[0]?.material?.roughness = 0 
-
-      // scene.children[2]?.children[0]?.material?.metalness = .767 
-      // scene.children[2]?.children[0]?.material?.metalness = 1 
     }
   }
 
@@ -183,42 +149,22 @@ const DegenHead = () => {
       envMap: new THREE.WebGLCubeRenderTarget(2048).texture,
       refractionRatio: 1,
       transparent: true,
-      transmission: .99,
+      transmission: 0.99,
       side: THREE.DoubleSide,
       clearcoat: 1.0,
       clearcoatRoughness: 0.39
     })
 
-    scene.children[2]?.children[1]?.children[2]?.material = glass
-  }
-
-  const setFaceMaterial = () => {
-    const gold = new THREE.MeshStandardMaterial({
-      metalness: 1,
-      roughness: 0.2,
-      envMap: new THREE.WebGLCubeRenderTarget(2048).texture,
-      envMapIntensity: 1,
-      emissive: "#000000",
-      displacementScale: 3,
-      // refractionRatio: 1,
-      // transparent: true,
-      // transmission: 0,
-      color: "#332526",
-      side: THREE.FrontSide,
-      // clearcoat: 1.0,
-      // clearcoatRoughness: 0
-    })
-
-    scene.children[2]?.children[0]?.material = gold
-    console.log(scene.children[2]?.children[0]?.material)
+    // Sets glasses lense to a glass like material
+    if (scene.children[2]) {
+      scene.children[2].children[1].children[2].material = glass
+    }
   }
 
   useEffect(() => {
-   setFace() 
+    setFace()
   }, [colorMode])
-  
-  
-  // setFaceMaterial() 
+
   setGlassesMaterial()
   return (
     <HeadContainer ref={refContainer}>

@@ -29,7 +29,7 @@ const Page = () => {
         mb={6}
         align="center"
       >
-        Hello, I'm a full-stack developer in Boston!
+        Hello, I&apos;m a full-stack developer in Boston!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>

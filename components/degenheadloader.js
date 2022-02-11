@@ -12,6 +12,7 @@ export const HeadSpinner = () => (
   />
 )
 
+// eslint-disable-next-line react/display-name
 export const HeadContainer = forwardRef(({ children }, ref) => (
   <Box
     ref={ref}
@@ -34,7 +35,7 @@ export const HeadContainer = forwardRef(({ children }, ref) => (
 const Loader = () => {
   return (
     <HeadContainer>
-      <DogSpinner />
+      <HeadSpinner />
     </HeadContainer>
   )
 }
