@@ -29,7 +29,7 @@ const Page = () => {
         mb={6}
         align="center"
       >
-        Hello, I&apos;m a full-stack developer in Boston!
+        Hello, I&apos;m a full-stack developer in NYC
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -61,7 +61,7 @@ const Page = () => {
           Work
         </Heading>
         <Paragraph>
-          Carter is a full-stack product developer based in Boston. He has the
+          Carter is a full-stack product developer based in NYC. He has the
           know-how for 0-to-1 product creation by taking an idea through
           customer interviews, product design, and implementing functional,
           scalable code.
