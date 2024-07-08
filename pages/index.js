@@ -94,18 +94,18 @@ const Page = () => {
           Hank
         </BioSection>
         <BioSection>
-          <BioYear>2021</BioYear>Became employee #2 @ Troav Delivery as a
-          Product Developer
+          <BioYear>2021</BioYear>Founding Engineer @ Troav Delivery leading
+          Product and Engineering
         </BioSection>
         <BioSection>
-          <BioYear>2022</BioYear>Crypto rabbit holing
+          <BioYear>2022 - 2024</BioYear>Product Engineer @ Pietra Studio
         </BioSection>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             I ♥
           </Heading>
           <Paragraph>
-            Nutrition, Crypto, Golf, Football, Philosophy, Chess, Food
+            Golf, Nutrition, Football, Philosophy, Chess, Cooking, Food
           </Paragraph>
         </Section>
 
@@ -126,13 +126,13 @@ const Page = () => {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://twitter.com/carter_tune" target="_blank">
+              <Link href="https://twitter.com/primalcowboy" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="pink"
                   leftIcon={<Icon as={IoLogoTwitter} />}
                 >
-                  @carter_tune
+                  @primalcowboy
                 </Button>
               </Link>
             </ListItem>
